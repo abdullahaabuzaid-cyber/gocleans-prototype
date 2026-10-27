@@ -8,3 +8,11 @@ Used here for prototype only. Sources:
 - car-landcruiser.jpg: Pexels 1683519; car-gclass.jpg: Pexels 20212565; car-rangerover.jpg: Pexels 116675
 - cam-rear.jpg: Pexels 20123592; car-eqs.jpg: Pexels 31458555
 - wash-foam.jpg: Pexels 29504457; wash-rangerover.jpg: Pexels 30589157; wash-suv.jpg: Pexels 31154194
+- Added (Pexels, Pexels License): wash-pressure 4876675; wash-pressure2 4876652; wash-vacuum 6873119; wash-interior 6873185; wash-polish 5233261; wash-polish2 20042054; wash-microfiber 7154635; wash-worker 6873008; wash-wheel 4870674; wash-foam2 4870739
+- prod-tire 7154618; prod-polish 20042050; prod-sponge 20051453; prod-perfume 26561324; prod-perfume2 10102273; prod-dash 4218867; prod-ceramic 7154633
+- wx-rain 20387888; wx-droplets 32464361; wx-dust 2883604; wx-haze 16576646
+- doha-aerial 31583097; doha-westbay 9471710; doha-corniche 12474049; doha-sunset 30276721
+- p-man1 5416860; p-man2 34171709; p-man3 5416825; p-man4 26574880; p-boy 21554154; p-boy2 29525529; p-woman 8154990
+- fleet-vans 4620555; car-lc-desert 4781950; car-suv-desert 5608576; car-lc-white 17744273
+- p-man5 15704715; p-man6 27407612; p-man7 35187732; p-man8 6870324
+- p-woman2 5211527; p-woman3 19830600

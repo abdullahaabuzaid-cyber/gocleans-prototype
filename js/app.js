@@ -34,7 +34,6 @@ const SCREENS={};
 
 SCREENS.splash={sb:'light',cls:'splash',html:()=>`
   <div class="splash-photo"><img src="img/car-suv-studio.jpg" alt=""><i></i></div>
-  <div class="bubbles-wrap" style="position:absolute;inset:0">${ART.bubbles(14)}</div>
   <div class="grow" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;position:relative">
     <div class="logo-ring"><img src="assets/logo.png" alt="Go Cleans"></div>
     <div><div style="font-size:44px;font-weight:800;line-height:1.1">${t('brand')}</div><div style="opacity:.75;margin-top:6px;font-size:16px">${t('tagline')}</div></div>
@@ -46,13 +45,13 @@ SCREENS.onboarding={sb:'dark',html:()=>{
   const sl=[{a:ART.foam(),k:'1'},{a:ART.ring(),k:'2'},{a:ART.map(),k:'3'}][S.onb];
   return `<div class="view" style="display:flex;flex-direction:column">
   <div class="row between"><div class="brand-tile"><img src="assets/logo.png" alt=""></div><button class="link" data-go="login">${t('skip')}</button></div>
-  <div class="onb-art mt-4" style="position:relative;color:#fff">${ART.bubbles(7)}${sl.a}</div>
+  <div class="onb-art mt-4" style="position:relative;color:#fff">${sl.a}</div>
   <div class="center" style="margin-top:28px;flex:1"><h1>${t('onb.t'+sl.k)}</h1><p class="muted mt-3" style="font-size:15.5px;padding:0 6px">${t('onb.d'+sl.k)}</p></div>
   <div class="dots mt-4">${[0,1,2].map(i=>`<i class="${i===S.onb?'on':''}"></i>`).join('')}</div>
   <div class="mt-5">${S.onb<2?`<button class="btn btn-primary" data-act="onbNext">${t('next')}</button>`:`<button class="btn btn-primary" data-go="login">${t('start')}</button>`}</div></div>`}};
 
 SCREENS.login={sb:'light',flush:true,html:()=>`
-  <div class="login-top">${ART.bubbles(8)}<div class="brand-tile" style="margin:0 auto 14px;width:76px;height:76px;border-radius:24px"><img src="assets/logo.png" style="width:56px;height:56px" alt=""></div><h1>${t('login.t')}</h1><p style="opacity:.78;margin-top:6px">${t('login.d')}</p></div>
+  <div class="login-top"><div class="hero-ph"><img src="img/wash-foam2.jpg" alt="" style="object-position:center 40%"><i></i></div><div class="brand-tile" style="margin:0 auto 14px;width:76px;height:76px;border-radius:24px"><img src="assets/logo.png" style="width:56px;height:56px" alt=""></div><h1>${t('login.t')}</h1><p style="opacity:.78;margin-top:6px">${t('login.d')}</p></div>
   <div class="login-card">
     <div class="field"><label>${t('mobile')}</label><div class="input-group"><div class="cc">🇶🇦 <bdi>+974</bdi></div><input class="input ltr" inputmode="numeric" value="5000 0001" aria-label="${t('mobile')}"></div></div>
     <button class="btn btn-primary" data-go="otp">${t('login.send')}</button>
@@ -72,7 +71,7 @@ SCREENS.otp={sb:'dark',html:()=>`${topbar('', 'login')}
 SCREENS.register={sb:'dark',html:()=>`${topbar(t('reg.t'),'otp')}
   <div class="steps"><i class="on"></i><i class="on"></i><i></i></div>
   <p class="muted mb-3">${t('reg.d')}</p>
-  <div class="center mb-3"><div class="avatar" style="width:84px;height:84px;border-radius:30px;font-size:34px;margin:0 auto;position:relative">ع<span style="position:absolute;bottom:-6px;inset-inline-end:-6px;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--navy-900);display:grid;place-items:center;font-size:16px;box-shadow:var(--sh-1)">${ic('edit')}</span></div></div>
+  <div class="center mb-3"><div class="avatar ph" style="width:84px;height:84px;border-radius:30px;margin:0 auto;position:relative;overflow:visible"><img src="img/a-man3.jpg" alt="" style="border-radius:28px"><span style="position:absolute;bottom:-6px;inset-inline-end:-6px;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--navy-900);display:grid;place-items:center;font-size:16px;box-shadow:var(--sh-1)">${ic('edit')}</span></div></div>
   <div class="field"><label>${t('reg.name')}</label><input class="input" value="${DATA.user.name}"></div>
   <div class="field"><label>${t('reg.email')}</label><input class="input ltr" value="${DATA.user.email}"></div>
   <div class="field"><label>${t('reg.plate')}</label><input class="input ltr" value="111 222"></div>
@@ -104,8 +103,8 @@ SCREENS.home={nav:'home',sb:'light',flush:true,html:()=>{
   const p=pk(S.sub.pkg),paid=S.sub.used*DATA.perWash,subCost=p.price,projected=saving(p);
   const banner={failed:`<div class="banner err">${ic('warn')}<div class="grow"><b>${t('bn.failed')}</b><div class="sm">${t('bn.failed.d')}</div></div><button class="btn btn-danger xs" data-go="cards">${t('update')}</button></div>`,
     pending:`<div class="banner warn">${ic('clock')}<div class="grow"><b>${t('bn.pending')}</b><div class="sm">${t('bn.pending.d')}</div></div></div>`,expired:'',active:''}[S.status];
-  return `<div class="hero" style="padding-bottom:150px">${ART.bubbles(8)}
-    <div class="row"><div class="avatar">ع</div><div class="grow"><div class="hero-sub">${t('home.hello')}</div><div class="hero-title">${DATA.user.name} 👋</div></div>
+  return `<div class="hero" style="padding-bottom:150px"><div class="hero-ph"><img src="img/doha-aerial.jpg" alt="" style="object-position:center 55%"><i></i></div>
+    <div class="row">${avatarPh("man3",48,17)}<div class="grow"><div class="hero-sub">${t('home.hello')}</div><div class="hero-title">${DATA.user.name} 👋</div></div>
     <button class="iconbtn glass" data-go="notifications" aria-label="${t('notifs')}">${ic('bell')}<i class="dot-badge" style="border-color:#12306f"></i></button></div></div>
   <div style="padding:0 18px;margin-top:-130px;position:relative;z-index:3">${subCard()}
     ${fxLive()}${fxWeather()}<div class="mt-4">${banner}</div>
@@ -116,7 +115,7 @@ SCREENS.home={nav:'home',sb:'light',flush:true,html:()=>{
     <div class="qa"><button data-go="packages"><div class="q o">${ic('tag')}</div>${t('q.packages')}</button><button data-go="cars"><div class="q">${ic('car')}</div>${t('q.cars')}</button><button data-go="history"><div class="q s">${ic('receipt')}</div>${t('q.invoices')}</button><button data-act="book"><div class="q">${ic('pin')}</div>${t('q.branches')}</button></div>
     ${fxGrid()}
     <div class="section-h"><h3>${t('lastwash')}</h3><button class="link" data-go="history">${t('all')}</button></div>
-    <div class="card tap" data-go="history"><div class="hist"><div class="ic">${ic('drop')}</div><div class="grow"><div class="b">${DATA.history[0].svc}</div><div class="muted sm">${DATA.history[0].branch} · ${fmtDate(DATA.history[0].date)}</div></div><div class="star">${'★'.repeat(DATA.history[0].rating)}</div></div></div>
+    <div class="card tap" data-go="history"><div class="hist"><div class="hp"><img src="img/${svcPhoto(DATA.history[0].svc)}.jpg" alt=""></div><div class="grow"><div class="b">${DATA.history[0].svc}</div><div class="muted sm">${DATA.history[0].branch} · ${fmtDate(DATA.history[0].date)}</div></div><div class="star">${'★'.repeat(DATA.history[0].rating)}</div></div></div>
     <div class="mt-4">${fxLoyaltyCard()}</div>
   </div>`}};
 
@@ -126,6 +125,7 @@ SCREENS.packages={nav:'packages',sb:'dark',html:()=>`
   <p class="muted" style="margin:-8px 0 16px">${t('pk.d')}</p>
   <div class="list">${DATA.packages.slice().reverse().map(p=>`
     <div class="pkg ${p.featured?'feat':''} card-tap" data-go="package/${p.id}" style="cursor:pointer">
+      <div class="pk-ph"><img src="img/${p.img}.jpg" alt=""><i></i></div>
       <div class="row"><div class="pkg-ic">${ic(p.icon)}</div><div class="grow"><h3 style="font-size:20px">${L(p.name)}</h3><div class="sm" style="opacity:.7">${L(p.tag)}</div></div>${p.featured?`<span class="crown">${t('best')}</span>`:''}</div>
       <div class="row between mt-4" style="align-items:flex-end"><div class="price"><bdi>${p.price}</bdi> <small>${t('cur')}</small></div><span class="save-pill">${t('pk.save',{n:saving(p)})}</span></div>
       <ul>${p.perks.slice(0,3).map(perk).join('')}</ul>
@@ -134,7 +134,7 @@ SCREENS.packages={nav:'packages',sb:'dark',html:()=>`
   <div class="banner info mt-4" style="margin-top:18px">${ic('info')}<div class="sm">${t('pk.note',{n:DATA.perWash})}</div></div>`};
 
 SCREENS.package={sb:'light',flush:true,html:(id)=>{const p=pk(id)||DATA.packages[2];return `
-  <div class="hero" style="padding-bottom:40px">${ART.bubbles(6)}<div class="row"><button class="iconbtn glass" data-go="packages" aria-label="${t('back')}">${ic('back')}</button><div class="grow"></div>${p.featured?`<span class="crown">${t('best')}</span>`:''}</div>
+  <div class="hero" style="padding-bottom:40px"><div class="hero-ph"><img src="img/${p.img}.jpg" alt=""><i></i></div><div class="row"><button class="iconbtn glass" data-go="packages" aria-label="${t('back')}">${ic('back')}</button><div class="grow"></div>${p.featured?`<span class="crown">${t('best')}</span>`:''}</div>
     <div class="mt-3">${ART.car({src:'img/car-lexus-lx.jpg',h:176,pos:'center 62%'})}</div></div>
   <div style="padding:20px 18px 120px">
     <div class="row between"><div><h1>${L(p.name)}</h1><div class="muted">${L(p.tag)} · ${t('pk.washes',{n:p.washes})}</div></div><div class="price" style="font-size:34px;font-weight:800;text-align:end"><bdi>${p.price}</bdi><div class="sm muted">${t('cur')}</div></div></div>
@@ -154,7 +154,7 @@ SCREENS.checkout={sb:'dark',html:()=>{
   let body='';
   if(c.step===1) body=`<div class="list">${S.cars.map(x=>`<div class="card sel tap ${c.car===x.id?'on':''}" data-act="coCar" data-arg="${x.id}"><div class="row"><div class="carimg">${ART.thumb(x)}</div><div class="grow"><div class="b">${x.make} ${x.model}</div><div class="muted sm mt-2">${plateHtml(x.plate)}</div></div><span class="radio"></span></div></div>`).join('')}
     <button class="btn btn-ghost" data-act="sheet" data-arg="addCar">${ic('plus')} ${t('cars.add')}</button></div>`;
-  if(c.step===2) body=`<div class="list">${DATA.branches.map(b=>`<div class="card sel tap ${c.branch===b.id?'on':''}" data-act="coBranch" data-arg="${b.id}"><div class="row"><div class="pkg-ic">${ic('pin')}</div><div class="grow"><div class="b">${L(b.name)}</div><div class="muted sm">${L(b.area)}</div><div class="row gap-2 mt-2 xs"><span class="chip ${b.busy==='low'?'ok':b.busy==='mid'?'warn':'err'}">${t('busy.'+b.busy)}</span><span class="muted"><bdi>${b.dist}</bdi> ${t('km')}</span></div></div><span class="radio"></span></div></div>`).join('')}</div>`;
+  if(c.step===2) body=`<div class="list">${DATA.branches.map(b=>`<div class="card sel tap ${c.branch===b.id?'on':''}" data-act="coBranch" data-arg="${b.id}"><div class="row"><div class="ph-sq"><img src="img/${b.img}.jpg" alt=""></div><div class="grow"><div class="b">${L(b.name)}</div><div class="muted sm">${L(b.area)}</div><div class="row gap-2 mt-2 xs"><span class="chip ${b.busy==='low'?'ok':b.busy==='mid'?'warn':'err'}">${t('busy.'+b.busy)}</span><span class="muted"><bdi>${b.dist}</bdi> ${t('km')}</span></div></div><span class="radio"></span></div></div>`).join('')}</div>`;
   if(c.step===3) body=`<div class="card"><div class="row"><div class="pkg-ic">${ic(p.icon)}</div><div class="grow"><div class="b">${t('pk.name',{n:L(p.name)})}</div><div class="muted sm">${t('pk.washes',{n:p.washes})} · ${L(p.tag)}</div></div><b>${qar(p.price)}</b></div><div class="divider"></div>
     <div class="kv"><span>${t('co.car')}</span><b>${car.make} ${car.model}</b></div><div class="kv"><span>${t('co.plate')}</span><b><bdi>${car.plate}</bdi></b></div><div class="kv"><span>${t('co.branch')}</span><b>${L(branchById(c.branch).name)}</b></div></div>
     <div class="card mt-3"><div class="b mb-2">${t('co.coupon')}</div>${c.coupon?`<div class="banner ok" style="margin:0"><span>${ic('checkc')}</span><div class="grow"><b><bdi>${c.coupon}</bdi></b><div class="sm">${t('co.coupon.ok',{n:disc})}</div></div><button data-act="rmCoupon" class="iconbtn" style="width:32px;height:32px">${ic('x',16)}</button></div>`:`<div class="row gap-2"><input id="couponIn" class="input ltr" placeholder="${t('co.coupon.ph')}" style="text-transform:uppercase"><button class="btn btn-dark sm" style="height:52px" data-act="applyCoupon">${t('apply')}</button></div><p class="muted xs mt-2">${t('co.coupon.hint')}</p>`}</div>
@@ -178,9 +178,9 @@ SCREENS.pay={sb:'dark',cls:'',html:()=>{
   <div class="mt-4"><button class="btn btn-primary" data-act="doPay">${ic('lock',18)} ${t('pay.btn')} ${qar(total)}</button><button class="btn btn-soft mt-2" style="height:44px" data-act="failPay">${t('pay.simfail')}</button></div>
   <p class="center muted xs mt-4">${t('pay.footer')}</p>`}};
 
-SCREENS.success={sb:'light',cls:'splash',html:()=>{const p=pk(S.co.pkg),total=p.price-couponCalc(p.price);return `${ART.confetti()}
+SCREENS.success={sb:'light',cls:'splash',html:()=>{const p=pk(S.co.pkg),total=p.price-couponCalc(p.price);return `<div class="splash-photo"><img src="img/car-lc-white.jpg" alt="" style="object-position:center 60%"><i></i></div>${ART.confetti()}
   <div class="grow" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:0 24px;text-align:center;position:relative">
-    <div class="successmark">${ic('check')}</div><h1 style="margin-top:14px">${t('ok.t')}</h1><p style="opacity:.8">${t('ok.d',{n:L(p.name)})}</p>
+    <div class="succ-ph"><img src="img/car-lexus-lx.jpg" alt="" style="object-position:center 60%"><b>${ic('check')}</b></div><h1 style="margin-top:14px">${t('ok.t')}</h1><p style="opacity:.8">${t('ok.d',{n:L(p.name)})}</p>
     <div class="glass" style="width:100%;border-radius:24px;padding:16px;text-align:start;margin-top:8px"><div class="kv" style="border-color:rgba(255,255,255,.15)"><span style="color:#b9d7e8">${t('ok.ref')}</span><b><bdi>GC-DEMO-2048</bdi></b></div><div class="kv" style="border-color:rgba(255,255,255,.15)"><span style="color:#b9d7e8">${t('ok.paid')}</span><b>${qar(total)}</b></div><div class="kv"><span style="color:#b9d7e8">${t('ok.start')}</span><b>${fmtDate(DATA.today)}</b></div></div></div>
   <div style="padding:0 22px 40px;position:relative"><button class="btn btn-primary" data-act="finishPurchase">${t('ok.home')}</button><button class="btn btn-glass mt-2" data-go="history" style="height:48px">${ic('receipt',18)} ${t('ok.invoice')}</button></div>`}};
 
@@ -190,7 +190,7 @@ SCREENS.cars={nav:'cars',sb:'dark',html:()=>`
   <div class="list">${S.cars.map(c=>{const p=c.pkg&&pk(c.pkg);return `<div class="card"><div class="row"><div class="carimg">${ART.thumb(c)}</div><div class="grow"><div class="b" style="font-size:16.5px">${c.make} ${c.model}</div><div class="muted sm"><bdi>${c.year}</bdi> · ${c.color}</div><div class="mt-2">${plateHtml(c.plate)}</div></div></div>
   <div class="divider"></div><div class="row between">${p?`<span class="chip orange">${ic('sparkle',13)} ${t('pk.name',{n:L(p.name)})}</span>`:`<span class="chip gray">${t('cars.nopkg')}</span>`}
   <div class="row gap-2"><button class="btn btn-soft xs" data-act="sheet" data-arg="assign:${c.id}">${p?t('cars.change'):t('cars.assign')}</button><button class="iconbtn" style="width:34px;height:34px;border-radius:11px;color:var(--err)" data-act="sheet" data-arg="rmCar:${c.id}" aria-label="${t('remove')}">${ic('trash',17)}</button></div></div></div>`}).join('')}</div>
-  ${S.cars.length===0?`<div class="center muted" style="margin-top:60px">${ic('car',60)}<p class="mt-3">${t('cars.empty')}</p></div>`:''}`};
+  ${S.cars.length===0?`<div class="center muted" style="margin-top:40px"><div class="emptyph"><img src="img/car-lc-desert.jpg" alt=""></div><p class="mt-3">${t('cars.empty')}</p></div>`:''}`};
 
 /* ----- Subscription management ----- */
 SCREENS.subscription={nav:'home',sb:'dark',html:()=>{
@@ -220,12 +220,12 @@ SCREENS.history={nav:'history',sb:'dark',html:()=>{const tab=S.histTab;return `
   <div class="topbar"><h1 style="font-size:26px" class="grow">${t('hist.t')}</h1></div>
   <div class="seg mb-3"><button class="${tab==='wash'?'on':''}" data-act="histTab" data-arg="wash">${t('hist.washes')}</button><button class="${tab==='inv'?'on':''}" data-act="histTab" data-arg="inv">${t('hist.invoices')}</button></div>
   ${tab==='wash'?`<div class="row gap-2 mb-3"><div class="card grow center" style="padding:12px"><div class="xb" style="font-size:24px;color:var(--orange)">${DATA.history.length}</div><div class="muted xs">${t('hist.total')}</div></div><div class="card grow center" style="padding:12px"><div class="xb" style="font-size:24px;color:var(--blue-600)">4.6</div><div class="muted xs">${t('hist.rate')}</div></div><div class="card grow center" style="padding:12px"><div class="xb" style="font-size:24px;color:var(--ok)">${qar(41)}</div><div class="muted xs">${t('hist.saved')}</div></div></div>
-  <div class="list">${DATA.history.map(h=>`<div class="card"><div class="hist"><div class="ic">${ic('drop')}</div><div class="grow"><div class="b">${h.svc}</div><div class="muted sm">${h.branch} · ${h.car}</div><div class="muted xs mt-2">${fmtDate(h.date)} · ${h.time}</div></div><div style="text-align:end"><div class="star">${'★'.repeat(h.rating)}</div>${h.src==='sub'?`<span class="chip aqua mt-2">${t('hist.sub')}</span>`:`<b class="sm">${qar(h.amount)}</b>`}</div></div></div>`).join('')}</div>`
+  <div class="list">${DATA.history.map(h=>`<div class="card"><div class="hist"><div class="hp"><img src="img/${svcPhoto(h.svc)}.jpg" alt=""></div><div class="grow"><div class="b">${h.svc}</div><div class="muted sm">${h.branch} · ${h.car}</div><div class="muted xs mt-2">${fmtDate(h.date)} · ${h.time}</div></div><div style="text-align:end"><div class="star">${'★'.repeat(h.rating)}</div>${h.src==='sub'?`<span class="chip aqua mt-2">${t('hist.sub')}</span>`:`<b class="sm">${qar(h.amount)}</b>`}</div></div></div>`).join('')}</div>`
   :`<div class="list">${DATA.invoices.map(v=>`<div class="card tap" data-act="sheet" data-arg="inv:${v.id}"><div class="row"><div class="pkg-ic" style="background:var(--blue-50);color:var(--blue-600)">${ic('receipt')}</div><div class="grow"><div class="b">${v.title}</div><div class="muted xs"><bdi>${v.id}</bdi> · ${fmtDate(v.date)}</div></div><div style="text-align:end"><b>${qar(v.amount)}</b><div class="mt-2">${statusChip(v.status)}</div></div></div></div>`).join('')}</div>`}`}};
 
 /* ----- Profile ----- */
 SCREENS.profile={nav:'profile',sb:'light',flush:true,html:()=>`
-  <div class="hero" style="padding-bottom:84px;text-align:center">${ART.bubbles(6)}<div class="avatar" style="width:86px;height:86px;border-radius:30px;font-size:36px;margin:8px auto 12px">ع</div><div class="hero-title">${DATA.user.name}</div><div class="hero-sub mt-2"><bdi>+974 ${DATA.user.mobile}</bdi></div></div>
+  <div class="hero" style="padding-bottom:84px;text-align:center"><div class="hero-ph"><img src="img/doha-sunset.jpg" alt="" style="object-position:center 60%"><i></i></div>${avatarPh("man3",92,32,"margin:8px auto 12px")}<div class="hero-title">${DATA.user.name}</div><div class="hero-sub mt-2"><bdi>+974 ${DATA.user.mobile}</bdi></div></div>
   <div style="padding:0 18px 20px;margin-top:-52px;position:relative;z-index:2">
    ${fxLoyaltyCard()}
    ${fxProfileCells()}
@@ -240,6 +240,7 @@ SCREENS.mobile={sb:'dark',html:()=>`${topbar(t('pr.mobile'),'profile')}
   <button class="btn btn-primary" data-act="sheet" data-arg="mobOtp">${t('login.send')}</button>`};
 
 SCREENS.notifications={sb:'dark',html:()=>{const n=S.notif;const row=(k,ic_,key)=>`<div class="cell" style="cursor:default"><div class="ico ${key==='wa'?'gn':'aq'}">${ic(ic_)}</div><div class="grow"><div class="b">${t('nt.'+key)}</div><div class="muted xs">${t('nt.'+key+'.d')}</div></div>${sw(n[key],'toggleNotif',key)}</div>`;return `${topbar(t('notifs'),'profile')}
+  <div class="section-h" style="margin-top:2px"><h3>آخر الإشعارات</h3></div>${nfeed()}<div style="height:14px"></div>
   <div class="card" style="background:linear-gradient(135deg,#0b3d2c,#128c5a);color:#fff;border:0"><div class="row"><div class="pkg-ic" style="background:rgba(255,255,255,.18);color:#fff">${ic('chat')}</div><div class="grow"><b style="font-size:16.5px">${t('nt.wa.t')}</b><div class="sm" style="opacity:.85">${t('nt.wa.d2')}</div></div>${sw(n.wa,'toggleNotif','wa')}</div></div>
   <div class="card mt-3" style="padding:4px 14px;${n.wa?'':'opacity:.5;pointer-events:none'}">${row('renew','calendar','renew')}${row('wash','drop','wash')}${row('pay','card','pay')}${row('offers','gift','offers')}</div>
   <div class="card mt-3"><div class="b mb-2">${t('nt.time')}</div><div class="pills">${['9:00 ص','12:00 م','5:00 م','8:00 م'].map((x,i)=>`<button class="pill ${i===1?'on':''}">${x}</button>`).join('')}</div></div>

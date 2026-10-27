@@ -1,0 +1,83 @@
+/* ===== Real-photo layer ===== */
+/* photo backdrop inside heroes */
+.hero>.hero-ph,.login-top>.hero-ph,.splash>.hero-ph{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.hero-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62}
+.hero-ph i{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,13,31,.62) 0%,rgba(11,29,69,.55) 45%,rgba(11,29,69,.92) 100%)}
+.hero>.hero-ph::after{display:none}
+.login-top>*{position:relative;z-index:1}.login-top>.hero-ph{position:absolute;z-index:0}
+.hero-ph.warm i{background:linear-gradient(180deg,rgba(60,30,5,.55) 0%,rgba(90,48,8,.5) 50%,rgba(11,29,69,.9) 100%)}
+/* avatars */
+.avatar.ph{padding:0;overflow:hidden;background:#cfd8e6;border:2px solid rgba(255,255,255,.55)}
+.avatar.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.av.ph,.av.ph img{overflow:hidden}.av.ph{padding:0;background:#e7ecf5}.av.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.avrow{display:flex;direction:ltr;justify-content:center}
+.avrow .avatar{margin-inline:-8px;border:3px solid #fff;box-shadow:0 6px 16px rgba(5,13,31,.35)}
+/* package cards */
+.pk-ph{position:relative;height:118px;margin:-20px -20px 14px;overflow:hidden}
+.pk-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.pk-ph i{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,13,31,.15),rgba(5,13,31,.68))}
+.pkg.feat>.pk-ph{position:relative}
+.pk-ph .pk-nm{position:absolute;inset-inline:18px;bottom:10px;color:#fff;display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+/* thumbnails */
+.ph-sq{width:52px;height:52px;border-radius:15px;overflow:hidden;flex:none;position:relative;box-shadow:0 6px 14px rgba(7,20,51,.2)}
+.ph-sq img{width:100%;height:100%;object-fit:cover;display:block}
+.hist .hp{width:52px;height:52px;border-radius:15px;overflow:hidden;flex:none;box-shadow:0 6px 14px rgba(7,20,51,.18)}
+.hist .hp img{width:100%;height:100%;object-fit:cover;display:block}
+.brrow .ph-sq{width:58px;height:58px}
+/* wide photo banners (success, empty, notifications) */
+.ph-banner{position:relative;border-radius:24px;overflow:hidden;height:150px;box-shadow:0 14px 30px rgba(7,20,51,.25)}
+.ph-banner img{width:100%;height:100%;object-fit:cover;display:block}
+.ph-banner i{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,13,31,.05) 30%,rgba(5,13,31,.7))}
+.ph-banner .cap{position:absolute;inset-inline:16px;bottom:12px;color:#fff;font-weight:800;font-size:16px;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.emptyph{width:210px;height:210px;border-radius:50%;overflow:hidden;margin:0 auto 14px;box-shadow:0 18px 40px rgba(7,20,51,.3);border:4px solid #fff}
+.emptyph img{width:100%;height:100%;object-fit:cover;display:block}
+.succ-ph{width:170px;height:170px;border-radius:50%;overflow:hidden;margin:0 auto 18px;border:4px solid rgba(255,255,255,.8);box-shadow:0 18px 44px rgba(0,0,0,.45);position:relative}
+.succ-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.succ-ph b{position:absolute;inset-inline-end:6px;bottom:6px;width:42px;height:42px;border-radius:50%;background:var(--ok,#17b26a);color:#fff;display:grid;place-items:center;border:3px solid #fff;font-size:22px}
+/* store tiles */
+.pt.ph{height:112px}
+.pt.ph,.pt-sm.ph{background:#0b1d45!important;padding:0}
+.pt.ph img,.pt-sm.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.pt.ph i.sh{position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(5,13,31,.55))}
+.pt-sm.ph{overflow:hidden}
+/* queue lane (real cars) */
+.qcar.ph{padding:0;overflow:hidden;width:36px;height:36px;border-radius:50%;border:2px solid rgba(255,255,255,.7);background:#0b1d45}
+.qcar.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.qcar.ph:first-child{border-color:#ff8000}
+.qgate.ph{padding:0;overflow:hidden;border-radius:50%;width:38px;height:38px;border:2px solid #66b8d9;flex:none}
+.qgate.ph img{width:100%;height:100%;object-fit:cover;display:block}
+/* tracking stepper — photo dots */
+.vdot.ph{padding:0;overflow:visible;background:#fff;border-color:#dbe3ef;width:48px;height:48px}
+.vdot.ph img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.vs:not(.ok):not(.now) .vdot.ph img{filter:grayscale(1);opacity:.5}
+.vs.ok .vdot.ph{background:#fff;border-color:var(--ok)}
+.vs.now .vdot.ph{background:#fff;border-color:#ff8000}
+.vdot.ph .vchk{position:absolute;inset-inline-end:-5px;bottom:-5px;width:20px;height:20px;border-radius:50%;background:var(--ok);color:#fff;display:grid;place-items:center;border:2px solid #fff}
+.vdot.ph .vchk svg{width:12px;height:12px}
+/* home weather card */
+.wx-card .wx-th{width:52px;height:52px;border-radius:16px;overflow:hidden;flex:none;border:2px solid rgba(255,255,255,.55)}
+.wx-card .wx-th img{width:100%;height:100%;object-fit:cover;display:block}
+/* loyalty strip on home */
+.loyalty>.ly-ph{position:absolute;inset-block:0;left:0;width:55%;z-index:0;pointer-events:none;-webkit-mask-image:linear-gradient(to right,#000 20%,transparent 100%);mask-image:linear-gradient(to right,#000 20%,transparent 100%)}
+.loyalty>.ly-ph img{width:100%;height:100%;object-fit:cover;opacity:.55;display:block}
+.loyalty>*:not(.ly-ph){position:relative;z-index:1}
+/* onboarding map-replacement chip */
+.onb-pin{position:absolute;z-index:3;inset-inline:18px;bottom:18px;display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:20px;background:rgba(5,13,31,.62);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:15px;text-align:start}
+.onb-pin .pn{width:44px;height:44px;border-radius:14px;background:var(--grad-orange,linear-gradient(135deg,#ff8000,#ffa433));display:grid;place-items:center;font-size:24px;flex:none}
+.onb-pin small{display:block;opacity:.75;font-size:12px;margin-top:1px}
+/* notification feed */
+.nfeed{display:grid;gap:10px}
+.nf{display:flex;gap:12px;align-items:center;padding:10px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:var(--sh-1)}
+.nf .nt{width:56px;height:56px;border-radius:15px;overflow:hidden;flex:none}.nf .nt img{width:100%;height:100%;object-fit:cover;display:block}
+.nf b{font-size:14.5px;display:block}.nf span{font-size:12.5px;color:var(--muted)}.nf em{margin-inline-start:auto;font-style:normal;font-size:11.5px;color:var(--muted);align-self:flex-start}
+/* admin / POS */
+.bcard .map.ph{background:#0b1d45;height:130px}
+.bcard .map.ph::before{display:none}
+.bcard .map.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bcard .map.ph i.sh{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,13,31,.05),rgba(5,13,31,.62))}
+.bcard .map.ph .pinb{position:absolute;inset-inline-start:12px;bottom:10px;display:flex;align-items:center;gap:6px;color:#fff;font-weight:800;font-size:13px;background:rgba(5,13,31,.55);padding:5px 10px;border-radius:99px;backdrop-filter:blur(8px)}
+.bcard .map.ph .i{position:static;font-size:16px;margin:0;filter:none;color:#ff9a1f}
+.svc .si.ph{width:100%;height:84px;border-radius:16px;overflow:hidden;padding:0;background:#0b1d45}
+.svc .si.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.svc.base .si.ph{background:#0b1d45}
+.svc{min-height:170px}
