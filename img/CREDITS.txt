@@ -1,0 +1,10 @@
+Photos are from Unsplash (Unsplash License) and Pexels (Pexels License), free for commercial use, no attribution required.
+Used here for prototype only. Sources:
+- car-lexus-lx.jpg: Unsplash "white lexus" (photo-1669691101370-9ee9ee0782dc)
+- car-lexus-black.jpg: Unsplash "black Lexus car" by Brandon Russell (photo-1577496549804-8b05f1f67338)
+- car-suv-studio.jpg: Unsplash by rawkkim (photo-1758025550252-2eb870da49cc)
+- car-defender.jpg: Unsplash by Rob Wingate (photo-1753030148206-4f6cd95e7512)
+- wash-tunnel.jpg: Unsplash by Avenir Visuals (photo-1769641156628-52ed6dc1a951)
+- car-landcruiser.jpg: Pexels 1683519; car-gclass.jpg: Pexels 20212565; car-rangerover.jpg: Pexels 116675
+- cam-rear.jpg: Pexels 20123592; car-eqs.jpg: Pexels 31458555
+- wash-foam.jpg: Pexels 29504457; wash-rangerover.jpg: Pexels 30589157; wash-suv.jpg: Pexels 31154194

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>جو كلينز · نظام التصميم</title><link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="css/app.css"><link rel="stylesheet" href="css/premium.css">
+<style>
+body{background:#eef2f9;overflow:auto!important;display:block!important;height:auto!important}
+.w{max-width:1100px;margin:0 auto;padding:40px 24px 80px}
+.hd{border-radius:32px;padding:36px;color:#fff;background:var(--grad-brand);position:relative;overflow:hidden;display:flex;gap:20px;align-items:center}
+.hd .lg{width:80px;height:80px;border-radius:24px;background:#fff;display:grid;place-items:center}.hd img{width:58px}
+h2{margin:40px 0 16px;font-size:24px}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.c{border-radius:22px;overflow:hidden;background:#fff;box-shadow:var(--sh-1)}.c i{display:block;height:84px}.c div{padding:10px 12px;font-size:13px}.c b{display:block;font-size:14px}
+.box{background:#fff;border-radius:24px;padding:24px;box-shadow:var(--sh-1);display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.box .btn{width:auto}
+.ic{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:10px}.ic div{background:#fff;border-radius:16px;padding:14px 4px;text-align:center;font-size:11px;color:var(--muted);box-shadow:var(--sh-1)}.ic svg{display:block;margin:0 auto 6px;color:var(--navy-900)}
+.dark{background:var(--grad-brand);border-radius:24px;padding:24px;display:flex;gap:20px;align-items:center;justify-content:space-around;position:relative;overflow:hidden}
+.ph{width:360px;max-width:100%;margin:0 auto}
+</style></head><body><div class="w">
+<div class="hd"><div class="lg"><img src="assets/logo.png" alt=""></div><div><h1 style="font-size:36px">نظام تصميم جو كلينز</h1><p style="opacity:.75;margin-top:4px">ألوان · خطوط · مكوّنات · أيقونات</p></div></div>
+<h2>الألوان</h2><div class="sw" id="sw"></div>
+<h2>الخطوط — Tajawal</h2><div class="box" style="display:block"><div style="font-size:44px;font-weight:800">غسيل أنيق، اشتراك ذكي</div><div style="font-size:28px;font-weight:700;margin-top:6px">عنوان رئيسي · Bold 700</div><div style="font-size:18px;font-weight:500;margin-top:6px">نص أساسي بحجم 18 للقراءة المريحة في التطبيق</div><div style="font-size:13px;color:var(--muted);margin-top:6px">نص مساعد صغير 13 · ٠١٢٣٤٥٦٧٨٩ / 0123456789</div></div>
+<h2>الأزرار</h2><div class="box"><button class="btn btn-primary">اشترك الآن</button><button class="btn btn-aqua">إضافة</button><button class="btn btn-ghost">ثانوي</button><button class="btn btn-soft">هادئ</button><button class="btn btn-dark">داكن</button><button class="btn btn-danger">حذف</button><button class="btn btn-primary" disabled>معطّل</button></div>
+<h2>الشارات والحالات</h2><div class="box"><span class="chip ok">نشط</span><span class="chip warn">بانتظار الدفع</span><span class="chip err">فشل الدفع</span><span class="chip info">موقوف</span><span class="chip aqua">وفّر 25%</span><span class="chip orange">الشهري</span><span class="chip gray">منتهي</span><span class="chip dark">GOCLEAN10</span><span class="switch on"></span><span class="switch"></span></div>
+<h2>الحقول</h2><div class="box" style="display:block"><div class="field"><label>رقم الجوال</label><input class="input" dir="ltr" style="text-align:start" value="5000 0001"></div><div class="field"><label>رقم اللوحة</label><div id="pl"></div></div></div>
+<h2>البطاقات والرسومات</h2><div class="dark"><div class="ph" id="art"></div></div>
+<h2>الأيقونات</h2><div class="ic" id="icl"></div></div>
+<script src="js/icons.js"></script><script src="js/i18n.js"></script><script src="js/core.js"></script><script src="js/art.js"></script>
+<script>
+const C=[['برتقالي العلامة','#FF8000'],['برتقالي فاتح','#FFB04D'],['أزرق سماوي','#66B8D9'],['سماوي مضيء','#47B5FF'],['كحلي 900','#0B1D45'],['كحلي 950','#050D1F'],['نجاح','#12B76A'],['خطأ','#F04438']];
+document.getElementById('sw').innerHTML=C.map(c=>`<div class="c"><i style="background:${c[1]}"></i><div><b>${c[0]}</b>${c[1]}</div></div>`).join('');
+document.getElementById('icl').innerHTML=Object.keys(ICONS).map(n=>`<div>${ic(n,26)}${n}</div>`).join('');document.getElementById('pl').innerHTML=plateHtml('111 222');document.getElementById('art').innerHTML=ART.car({w:300})+ART.bubbles(8);
+</script></body></html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>جو كلينز · معرض الشاشات</title><link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="css/tokens.css">
+<style>
+*{box-sizing:border-box;margin:0}body{font-family:Tajawal,sans-serif;background:#050d1f;color:#fff;min-height:100vh;
+background:radial-gradient(900px 600px at 90% -10%,rgba(255,128,0,.28),transparent 60%),radial-gradient(800px 600px at -10% 20%,rgba(102,184,217,.25),transparent 60%),linear-gradient(170deg,#0b1d45,#050d1f 60%)}
+a{color:inherit;text-decoration:none}
+header{max-width:1280px;margin:0 auto;padding:56px 28px 20px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.lg{width:84px;height:84px;border-radius:26px;background:#fff;display:grid;place-items:center;box-shadow:0 20px 50px rgba(255,128,0,.35)}.lg img{width:62px}
+h1{font-size:44px;font-weight:800;letter-spacing:-.5px}header p{opacity:.7;font-size:17px;margin-top:6px}
+.tag{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:5px 14px;font-size:13px;font-weight:700;margin-inline-end:8px;margin-top:12px}
+main{max-width:1280px;margin:0 auto;padding:10px 28px 80px}
+h2{font-size:26px;margin:44px 0 18px;display:flex;align-items:center;gap:12px}h2::before{content:"";width:8px;height:28px;border-radius:6px;background:linear-gradient(#ff9a1f,#ff8000)}
+.big{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.bigc{border-radius:28px;padding:26px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(14px);transition:.25s;display:block}
+.bigc:hover{transform:translateY(-5px);background:rgba(255,255,255,.13);box-shadow:0 24px 50px rgba(0,0,0,.4)}
+.bigc b{font-size:22px;display:block}.bigc span{opacity:.7;font-size:14.5px;display:block;margin-top:6px;line-height:1.7}
+.bigc .go{margin-top:14px;display:inline-block;background:linear-gradient(135deg,#ff8000,#ffa433);border-radius:12px;padding:8px 16px;font-weight:800;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:26px}
+.s{display:block;text-align:center}.s .ph{width:250px;height:542px;margin:0 auto;border-radius:34px;overflow:hidden;position:relative;box-shadow:0 0 0 7px #0d1a38,0 0 0 8px rgba(255,255,255,.18),0 26px 50px rgba(0,0,0,.5);transition:.25s;background:#fff}
+.s:hover .ph{transform:translateY(-6px)}
+.s iframe{width:390px;height:844px;border:0;transform:scale(.641);transform-origin:top right;position:absolute;top:0;right:0;pointer-events:none}
+.s b{display:block;margin-top:18px;font-size:16px}.s small{opacity:.6}
+footer{text-align:center;opacity:.5;padding:30px;font-size:13px}
+@media(max-width:900px){.big{grid-template-columns:1fr}h1{font-size:32px}}
+</style></head><body>
+<header><div class="lg"><img src="assets/logo.png" alt="جو كلينز"></div><div><h1>جو كلينز · نموذج الواجهات</h1><p>تطبيق اشتراكات غسيل السيارات في قطر — نموذج تفاعلي قابل للنقر</p><span class="tag">عربي · RTL</span><span class="tag">بيانات تجريبية</span><span class="tag">ر.ق QAR</span></div></header>
+<main>
+<h2>الأنظمة</h2>
+<div class="big">
+<a class="bigc" href="app.html"><b>📱 تطبيق العميل</b><span>تجربة كاملة من الترحيب وتسجيل الدخول بالجوال وOTP، حتى الاشتراك والدفع (MyFatoorah تجريبي) وإدارة الاشتراك.</span><i class="go">افتح التطبيق ←</i></a>
+<a class="bigc" href="admin.html"><b>🖥️ لوحة الإدارة</b><span>عملاء مع فلاتر وتصدير Excel، اشتراكات، كوبونات، فروع، مستخدمون وصلاحيات، وتقارير.</span><i class="go">افتح اللوحة ←</i></a>
+<a class="bigc" href="pos.html"><b>🧾 نقطة البيع (الكاشير)</b><span>تسجيل عميل في الموقع، خدمات إضافية، خصومات، نقاط ولاء، استخدام غسلة اشتراك، ودفع.</span><i class="go">افتح الكاشير ←</i></a>
+</div>
+<div class="big" style="margin-top:18px"><a class="bigc" href="design-system.html" style="grid-column:1/-1"><b>🎨 نظام التصميم</b><span>الألوان، الخطوط، الأزرار، البطاقات، الحقول، الأيقونات والرسومات.</span></a></div>
+<h2>شاشات تطبيق العميل</h2>
+<div class="grid" id="g"></div>
+</main><footer>جميع البيانات والأسماء والأرقام وهمية لأغراض العرض فقط</footer>
+<script>
+const R=[['splash','البداية'],['onboarding','الترحيب'],['login','تسجيل الدخول'],['otp','رمز التحقق'],['register','إكمال التسجيل'],['home','الرئيسية'],['packages','الباقات'],['package/monthly','تفاصيل الباقة'],['checkout','الدفع: السيارة والفرع'],['pay','بوابة الدفع'],['success','نجاح الاشتراك'],['cars','سياراتي'],['subscription','إدارة الاشتراك'],['cards','بطاقات الدفع'],['history','السجل والفواتير'],['profile','حسابي'],['notifications','الإشعارات']];
+document.getElementById('g').innerHTML=R.map(r=>`<a class="s" href="app.html#/${r[0]}"><div class="ph"><iframe loading="lazy" src="app.html#/${r[0]}" tabindex="-1"></iframe></div><b>${r[1]}</b></a>`).join('');
+</script></body></html>

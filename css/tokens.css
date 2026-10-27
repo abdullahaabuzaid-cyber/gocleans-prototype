@@ -1,0 +1,25 @@
+/* Go Cleans — Design tokens (جو كلينز) */
+@font-face{font-family:"Tajawal";font-weight:400;font-display:swap;src:url(../fonts/Tajawal-400.ttf) format("truetype")}
+@font-face{font-family:"Tajawal";font-weight:500;font-display:swap;src:url(../fonts/Tajawal-500.ttf) format("truetype")}
+@font-face{font-family:"Tajawal";font-weight:700;font-display:swap;src:url(../fonts/Tajawal-700.ttf) format("truetype")}
+@font-face{font-family:"Tajawal";font-weight:800;font-display:swap;src:url(../fonts/Tajawal-800.ttf) format("truetype")}
+:root{
+  /* Brand — deep blue + aqua water */
+  --navy-950:#061a3d; --navy-900:#0a2a62; --navy-800:#0d3a85; --blue-600:#1560d8; --blue-500:#2f79ee; --blue-100:#dbe8fe; --blue-50:#eef4ff;
+  --aqua-500:#12c6d6; --aqua-400:#2fd9e6; --aqua-300:#7aebf2; --aqua-100:#cffafd; --aqua-50:#eafcfd;
+  /* Neutrals */
+  --ink:#0e1b36; --ink-2:#34425e; --muted:#6a7791; --line:#e3eaf4; --line-2:#eef2f8; --bg:#f3f7fc; --card:#ffffff;
+  /* Status */
+  --ok:#12b76a; --ok-bg:#e6f8ef; --warn:#f79009; --warn-bg:#fff3e0; --err:#f04438; --err-bg:#fdebea; --info:#1560d8; --info-bg:#eef4ff;
+  --grad-brand:linear-gradient(135deg,#0a2a62 0%,#1560d8 70%,#12c6d6 130%);
+  --grad-aqua:linear-gradient(135deg,#12c6d6,#2f79ee);
+  /* Shape & elevation */
+  --r-sm:10px; --r-md:14px; --r-lg:20px; --r-xl:28px; --r-pill:999px;
+  --sh-1:0 1px 2px rgba(10,42,98,.06),0 2px 8px rgba(10,42,98,.05);
+  --sh-2:0 6px 20px rgba(10,42,98,.10);
+  --sh-3:0 18px 48px rgba(10,42,98,.22);
+  /* Type */
+  --font:"Tajawal","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --fs-xs:11.5px; --fs-sm:13px; --fs-md:15px; --fs-lg:17px; --fs-xl:21px; --fs-2xl:27px; --fs-3xl:34px;
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:20px; --sp-6:24px; --sp-8:32px;
+}
