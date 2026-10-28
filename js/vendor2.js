@@ -8,7 +8,7 @@ const _oo=window.openO;window.openO=id=>{_oo(id);const s=MK.get(),b=s.bookings.f
   <label class="btn sm gh" style="margin-top:6px;cursor:pointer">${ic('camera')} رفع صورة<input type="file" accept="image/*" hidden onchange="upPh(this,'${id}','${k}')"></label></div>`;
  const ex=`<div class="card mt" style="padding:14px;box-shadow:none;border:1px solid var(--line)">${tagsOf(b)?`<div style="margin-bottom:8px">${tagsOf(b)}</div>`:''}
  ${b.mobile?`<div class="row" style="font-size:13.5px;margin-bottom:6px">🚐 <b class="tx">غسيل متنقل: ${E(b.addr)}</b></div>`:''}
- ${b.products&&b.products.length?`<div style="font-size:13.5px;margin-bottom:8px"><b>🛍 منتجات يستلمها العميل من الفرع:</b> ${b.products.map(p=>E(p.name)+' ('+M(p.price)+')').join('، ')}</div>`:''}
+ ${b.products&&b.products.length?`<div style="font-size:13.5px;margin-bottom:8px"><b>🛍 ${b.mobile?'منتجات تصل للعميل مع العامل (حمّلها في السيارة):':'منتجات يستلمها العميل من الفرع:'}</b> ${b.products.map(p=>E(p.name)+' ('+M(p.price)+')').join('، ')}</div>`:''}
  <b>📸 صور قبل وبعد (تظهر للعميل في التطبيق)</b><div class="g2e" style="margin-top:8px">${slot('before','قبل')}${slot('after','بعد')}</div></div>`;
  m.querySelector('.row.mt:last-child').insertAdjacentHTML('beforebegin',ex);};
 window.attachPh=(id,k,src)=>{MK.update(s=>{const b=s.bookings.find(x=>x.id===id);b.photos=b.photos||{before:[],after:[]};b.photos[k]=[src];if(b.mine)s.notifs.unshift({t:'📸 صور '+(k==='before'?'قبل':'بعد')+' الغسيل',b:MK.vendor(b.vendorId,s).name+' أرفقت صوراً لسيارتك',d:'الآن',img:src});});toast('تم إرفاق الصورة ✓ ستظهر للعميل');openO(id);};
