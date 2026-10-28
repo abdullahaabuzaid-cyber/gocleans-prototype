@@ -16,3 +16,4 @@ Used here for prototype only. Sources:
 - fleet-vans 4620555; car-lc-desert 4781950; car-suv-desert 5608576; car-lc-white 17744273
 - p-man5 15704715; p-man6 27407612; p-man7 35187732; p-man8 6870324
 - p-woman2 5211527; p-woman3 19830600
+- Photo tiles (Pexels, Pexels License): tile-gift 6699463; tile-gift2 6650013; tile-pay 5239807; tile-help2 7682092; tile-family 7854091; tile-receipt 19224085

@@ -19,7 +19,7 @@ const sheet=(n,d)=>{S.sheet=n?{n,d}:null;paint()};
 /* ---------- small components ---------- */
 const topbar=(title,back,right='')=>`<div class="topbar">${back?`<button class="iconbtn" data-go="${back}" aria-label="${t('back')}">${ic('back')}</button>`:''}<h2>${title}</h2>${right}</div>`;
 const sw=(on,act,arg='')=>`<button class="switch ${on?'on':''}" data-act="${act}" data-arg="${arg}" role="switch" aria-checked="${on}"></button>`;
-const cell=(icon,title,sub,go_,cls='',tail='')=>`<div class="cell" data-go="${go_}"><div class="ico ${cls}">${ic(icon)}</div><div class="grow"><div class="b">${title}</div>${sub?`<div class="muted sm">${sub}</div>`:''}</div>${tail}<span class="chev flip">${ic('next')}</span></div>`;
+const cell=(icon,title,sub,go_,cls='',tail='')=>`<div class="cell" data-go="${go_}">${typeof TILE_PH!=='undefined'&&TILE_PH[go_]?`<div class="ico ph"><img src="img/${TILE_PH[go_]}.jpg" alt="" loading="lazy"><b>${ic(icon,15)}</b></div>`:`<div class="ico ${cls}">${ic(icon)}</div>`}<div class="grow"><div class="b">${title}</div>${sub?`<div class="muted sm">${sub}</div>`:''}</div>${tail}<span class="chev flip">${ic('next')}</span></div>`;
 const subBg=car=>`<div class="sc-bg"><img src="img/${car&&car.id==='c3'?'car-lexus-black':car&&car.id==='c2'?'car-gclass':'car-landcruiser'}.jpg" alt=""><i></i></div>`;
 const carColor=c=>S.carColors[c]||'#2f6ae0';
 const pk=id=>pkgById(id);
@@ -112,7 +112,7 @@ SCREENS.home={nav:'home',sb:'light',flush:true,html:()=>{
       <div class="mt-4 col" style="gap:10px"><div><div class="row between xs b"><span>${t('save.ppw')}</span><span><bdi>${p.washes*DATA.perWash}</bdi> ${t('cur')}</span></div><div class="bar gray mt-2"><i style="width:100%"></i></div></div>
       <div><div class="row between xs b"><span>${t('save.sub')}</span><span class="aqua-t"><bdi>${subCost}</bdi> ${t('cur')}</span></div><div class="bar mt-2"><i style="width:${subCost/(p.washes*DATA.perWash)*100}%"></i></div></div></div></div>
     <div class="section-h"><h3>${t('quick')}</h3></div>
-    <div class="qa"><button data-go="packages"><div class="q o">${ic('tag')}</div>${t('q.packages')}</button><button data-go="cars"><div class="q">${ic('car')}</div>${t('q.cars')}</button><button data-go="history"><div class="q s">${ic('receipt')}</div>${t('q.invoices')}</button><button data-act="book"><div class="q">${ic('pin')}</div>${t('q.branches')}</button></div>
+    <div class="qa ptiles">${ptile('packages','tag',t('q.packages'),'data-go="packages"')}${ptile('cars','car',t('q.cars'),'data-go="cars"')}${ptile('history','receipt',t('q.invoices'),'data-go="history"')}${ptile('branches','pin',t('q.branches'),'data-act="book"')}</div>
     ${fxGrid()}
     <div class="section-h"><h3>${t('lastwash')}</h3><button class="link" data-go="history">${t('all')}</button></div>
     <div class="card tap" data-go="history"><div class="hist"><div class="hp"><img src="img/${svcPhoto(DATA.history[0].svc)}.jpg" alt=""></div><div class="grow"><div class="b">${DATA.history[0].svc}</div><div class="muted sm">${DATA.history[0].branch} · ${fmtDate(DATA.history[0].date)}</div></div><div class="star">${'★'.repeat(DATA.history[0].rating)}</div></div></div>

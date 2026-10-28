@@ -21,3 +21,7 @@ const avatarPh=(k,w,r,extra)=>`<div class="avatar ph" style="width:${w}px;height
 /* notification feed with real photos */
 const nfeed=()=>{const L2=[['car-lexus-lx','سيارتك جاهزة','فرع الدوحة الجديدة · تفضل بالاستلام','الآن'],['wx-dust','تنبيه غبار في الدوحة','احجز غسلة بعد العاصفة بخصم 10%','قبل ساعتين'],['wash-polish','حان وقت التلميع','باقتك الشهرية تشمل تلميعاً واحداً','أمس']];return `<div class="nfeed">${L2.map(x=>`<div class="nf"><div class="nt"><img src="img/${x[0]}.jpg" alt=""></div><div><b>${x[1]}</b><span>${x[2]}</span></div><em>${x[3]}</em></div>`).join('')}</div>`};
 const HP=(n,pos,cls)=>`<div class="hero-ph ${cls||''}"><img src="img/${n}.jpg" alt=""${pos?` style="object-position:${pos}"`:''}><i></i></div>`;
+
+/* photo tiles (home quick-access + all-services grids, profile menu) */
+const TILE_PH={packages:'wash-polish',cars:'car-landcruiser',history:'tile-receipt',branches:'doha-westbay',book:'wash-tunnel',track:'wash-foam',plate:'cam-rear',loyalty:'car-lexus-black',refer:'tile-gift2',family:'tile-family',gift:'tile-gift',weather:'wx-rain',rate:'wash-worker',store:'prod-perfume',wallet:'tile-pay',help:'tile-help2',cards:'tile-pay',notifications:'car-lexus-lx'};
+const ptile=(key,icon,label,attr)=>`<button class="ptile" ${attr}><img src="img/${TILE_PH[key]}.jpg" alt="" loading="lazy"><i class="pt-ov"></i><span class="pt-b">${ic(icon,15)}</span><span class="pt-l">${label}</span></button>`;
